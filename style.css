@@ -1,0 +1,123 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    width: 100%;
+    background-color: #424558;
+}
+
+nav > ul{
+    padding: 0;
+    margin: 0;
+}
+
+nav li{
+    list-style-type: none;
+}
+
+nav > ul > li{
+    float: left;
+    position: relative;
+}
+
+nav > ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.submenu{
+    display: none;
+}
+
+nav input[type=checkbox]{
+    display: none;
+}
+
+nav label{
+    display: none;
+}
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav > ul > li > a{
+    padding: 20px 30px;
+    color: white;
+}
+
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+
+.submenu li a{
+    padding: 15px 30px;
+    color: black;
+    width: 270px;
+}
+
+.menu-logement:hover{
+    border-top: 5px solid #e44d26;
+    background-color: rgba(228, 77, 38, 0.15);
+}
+
+.menu-Serestaurer:hover{
+    border-bottom: 5px dashed #0070bb;
+    background-color: rgba(000, 112, 192, 0.15);
+}
+
+.menu-venir-ici:hover{
+    border-top: 5px dotted #f1dc4f;
+    background-color: rgba(241, 211, 79, 0.15);
+}
+
+.menu-contact:hover{
+    border-top: 15px hidden #bbb;
+    background-color: rgba(220, 220, 220, 0.15);
+}
+
+
+.submenu li:hover a{
+    color: #424558;
+    font-weight: bold;
+}
+
+/* configuration pour mobil */
+nav input[type=checkbox]:checked ~ ul{
+    display: block;
+}
+
+@media screen and (max-width: 780px) {
+    .menu-mobile{
+        display: block;
+        color: white;
+        background-color: rgba(29, 197, 151, 0.97);
+        text-align: center;
+        padding: 12px 0;
+    }   
+    nav ul{
+        display: none;
+    }
+    nav ul li, nav ul li a{
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a, nav ul li:hover a{
+        padding: 10px 0;
+    }
+    nav li:hover .submenu{
+        display: block;
+        position: static;
+    }
+}
+
+/* Fin configuration pour mobil */
